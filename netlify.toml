@@ -1,5 +1,12 @@
-#https://stackoverflow.com/questions/58065603/netlify-renders-404-on-page-refresh-using-react-and-react-router 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[build]
+publish = "public"
+command = "hugo"
+
+[context.production.environment]
+HUGO_VERSION = "0.79.0"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
+
+[context.branch-deploy.environment]
+HUGO_VERSION = "0.79.0"
+
